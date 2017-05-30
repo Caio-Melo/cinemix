@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+ Route::resource('generos', 'GeneroController');
+ Route::resource('filmes', 'FilmeController');
+ Route::resource('listas', 'ListaController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
