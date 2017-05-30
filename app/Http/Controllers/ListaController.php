@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Lista;
+use App\Filme;
 use Illuminate\Http\Request;
 
 class ListaController extends Controller
@@ -91,6 +92,15 @@ class ListaController extends Controller
     {
         $listas = Lista::find($lista->id);
         $listas->delete();
-        return redirect('listas');listas
+        return redirect('listas');
     }
+
+    public function addlista()
+    {
+        $filmes = Filme::all();
+        $listas = Lista::all();
+        return view('listas.addlista', compact('listas'),  compact('filmes'));
+    }
+
+
 }

@@ -14,14 +14,14 @@
     </thead>
 
     <tbody>
-        @foreach($listas as $listalistas)
+        @foreach($listas as $lista)
         
         <tr>
-            <td>{{$listalistas->id}}</td>
-            <td>{{$listalistas->nome}}</td>
+            <td>{{$lista->id}}</td>
+            <td>{{$lista->nome}}</td>
             
             <td>
-                <a class="btn btn-primary" href="/listas/{{$listalistas->id}}/edit">
+                <a class="btn btn-primary" href="/listas/{{$lista->id}}/edit">
                                     Editar
                                 </a>
 

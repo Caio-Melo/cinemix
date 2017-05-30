@@ -15,9 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::group(['middleware' => 'auth'], function() {
+
+
  Route::resource('generos', 'GeneroController');
  Route::resource('filmes', 'FilmeController');
  Route::resource('listas', 'ListaController');
+Route::get('/addlista', 'ListaController@addlista');
+
+ });
 
 Auth::routes();
 
